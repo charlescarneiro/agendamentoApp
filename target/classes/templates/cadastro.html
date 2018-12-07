@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:form="http://www.springframework.org/tags/form">
+<head>
+<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="bootstrap/js/bootstrap.min.js" rel="stylesheet"/>
+    <link href="style/styleCss.css" rel="stylesheet"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+	<link rel="icon" href="images/img.jpeg"></link>
+	<title>Agenda - Cadastro</title>
+</head>
+<body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
+				Agendamento</span>
+
+			<div id="mySidenav" class="sidenav fixad">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a><span class="white"> Menu</span></a> <a href="/"
+					class=" glyphicon glyphicon-home"><span class="fonte">
+						Home</span></a><a href="/cadastro" class=" glyphicon glyphicon-plus-sign"><span
+					class="fonte"> Agendamento</span></a> <a href="/cadastroAdmin"
+					class=" glyphicon glyphicon-plus-sign"><span class="fonte">
+						Administrador</span></a> 
+						<a id="admin" href="#" 
+						class="glyphicon glyphicon-info-sign"><span class="fonte"> Sobre</span></a>
+						<a href="/logout" class="glyphicon glyphicon-off ">
+						<span class="fonte"> Sair</span></a>
+			</div>
+		</nav>
+
+	<section >
+		<div class="container ">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card1">
+					<div class="card-header">
+						<h3>Agendar</h3>
+						<th:block th:include="fragments/MensagemSucesso"></th:block>
+					</div>
+					<div class="card-body">
+						<form action="/cadastro" method="POST" class="form-group">
+
+							<div class="input-group input-group1 form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-user-circle"></i></span> <input name="nomeCliente"
+										type="text" value="" class="form-control"
+										placeholder="Cliente" required="required" />
+								</div>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-edit"></i></span> <input name="procedimento" type="text"
+										value="" class="form-control" placeholder="Procedimento"
+										required="required" />
+								</div>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-calendar-check"></i></span> <input name="data"
+										type="date" value="" class="form-control"
+										required="required" />
+								</div>
+							</div>
+
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-eye"></i></span> <input name="descricao" type="text"
+										value="" class="form-control" placeholder="Observação"
+										required="required" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<button id="submeter" type="submit" value="Log in"
+									class="btn green white">Salvar Agendamento</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- FOOTER -->
+	<div class="footerCadAgendamento">
+		<footer>
+			<div class="container marketing">
+				<p class="pull-right">
+					<a href="#">Ir para o topo</a>
+				</p>
+				<p>&copy; 2018 Company, Inc.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery-3.2.0.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

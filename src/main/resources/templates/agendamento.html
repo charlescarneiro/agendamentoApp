@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="icon" href="images/img.jpeg"></link>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+<link href="bootstrap/js/bootstrap.min.js" rel="stylesheet"></link>
+<link href="style/styleCss.css" rel="stylesheet"></link>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+
+<title th:text="${agendamentos.nomeCliente}"></title>
+
+</head>
+<body class="bodyAgendamento">
+
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
+				Agendamento</span>
+
+			<div id="mySidenav" class="sidenav fixad">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a><span class="white">Menu</span></a>
+				<a href="/"
+					class=" glyphicon glyphicon-plus-sign"><span
+					class="fonte"> Home</span></a>
+				<a href="/cadastro"	class=" glyphicon glyphicon-plus-sign"><span class="fonte">
+						Agendamento</span></a> 
+					<a href="/cadastroAdmin"
+					class=" glyphicon glyphicon-plus-sign"><span
+					class="fonte"> Administrador</span></a>
+					<a id="admin" href="#" 
+						class="glyphicon glyphicon-info-sign"><span class="fonte"> Sobre</span></a>
+					<a href="/logout"
+					class="glyphicon glyphicon-off "><span class="fonte">
+						Sair</span></a>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="agendamento">
+		<div id="agendamento">
+			<div th:each="agendamento : ${agendamentos}">
+				<h2>
+					<span th:text="${agendamento.nomeCliente}"></span>
+				</h2>
+				<h4>Deseja: 
+					<span th:text="${agendamento.procedimento}"></span>
+				</h4>
+				<h4> No dia: 
+					<span th:text="${agendamento.data}"></span>
+				</h4> 
+				<pre>Descrição: 
+					<span th:text="${agendamento.descricao}"></span>
+				</pre>
+				<p sec:authorize="isAuthenticated()"> <a th:href="${(#mvc.url('HC#delete').arg(0, agendamento.nomeCliente)).build()}"
+						class="btn btn-primary" role="button">Deletar Agendamento</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<div class="footerGetAgendamento">
+		<footer>
+			<div class="container marketing">
+				<p class="pull-right">
+					<a href="#">Ir para o topo</a>
+				</p>
+				<p>&copy; 2018 Company, Inc.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../assets/js/vendor/holder.min.js"></script>
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

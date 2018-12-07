@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:form="http://www.springframework.org/tags/form">
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous" />
+	<link
+		href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		rel="stylesheet" id="bootstrap-css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="bootstrap/js/bootstrap.min.js" rel="stylesheet" />
+<link href="style/styleCss.css" rel="stylesheet" />
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<meta name="description" content=""></meta>
+<meta name="author" content=""></meta>
+<link rel="icon" href="images/img.jpeg"></link>
+
+<title>Cadastrar Administrador</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top1">
+		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
+			Agendamento</span>
+		<div id="mySidenav" class="sidenav fixad">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a><span class="white"> Menu</span></a> 
+			<a href="/"
+					class=" glyphicon glyphicon-home"><span
+					class="fonte"> Home</span></a>
+			<a href="/cadastro" class=" glyphicon glyphicon-plus-sign"><span class="fonte">
+					Agendamento</span></a>
+			<a href="/cadastroAdmin" class="glyphicon glyphicon-plus-sign"><span
+				class="fonte"> Administrador</span></a>
+				<a id="admin" href="#" 
+						class="glyphicon glyphicon-info-sign"><span class="fonte"> Sobre</span></a>
+				<a href="/logout" class="glyphicon glyphicon-off "><span class="fonte">
+					Sair</span></a>
+		</div>
+	</nav>
+	
+	<section>
+		<div class="container">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card">
+					<div class="card-header">
+						<h3>Cadastrar Novo Administrador</h3>
+					</div>
+					<div class="card-body">
+						<form action="/cadastroAdmin" method="POST" class="form-group">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-user"></i></span>
+
+								<input name="login" type="text" value="" class="form-control"
+									placeholder="Escolha Login" required="required" />
+							</div>
+							</div>
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i
+										class="white fas fa-key"></i></span>
+								<input name="senha" type="password" value=""
+									class="form-control" placeholder="Escolha uma Senha" required="required"/>
+							</div>
+							</div>
+							<div class="form-group">
+								<button type="submit" value="Log in" class="btn green white">Cadastrar</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- FOOTER -->
+	<div class="footerCadAdmin">
+		<footer>
+			<div class="container marketing">
+				<p class="pull-right">
+					<a href="#">Ir para o topo</a>
+				</p>
+				<p>&copy; 2018 Company, Inc.</p>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+	<script src="../../assets/js/vendor/holder.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/main.js"></script>
+
+	
+
+</body>
+</html>
